@@ -6,8 +6,10 @@ public class LevelTimer : MonoBehaviour
 {
     public LevelSO levelSO;
 
+    [SerializeField] LoadSceneAdditive loadSceneAdditive;
     [SerializeField] TransitionAnimations transitionAnimations;
     [SerializeField] GameObject transitionContent;
+
 
     float levelDuration;
 
@@ -19,14 +21,21 @@ public class LevelTimer : MonoBehaviour
     public void StartLevelTimer()
     {
         levelDuration = levelSO.levelDuration;
-        Timer.OnTimerEnd(levelDuration, () => GoToIntermission());
+        Timer.OnTimerEnd(levelDuration, () => StartCoroutine(GoToLevel()));
     }
-    
-    private void GoToIntermission()
+   
+
+    IEnumerator GoToLevel()
     {
         transitionAnimations.PlayBarsIn();
 
-        Timer.OnTimerEnd(1, () => transitionAnimations.PlayBarsOut());
+        yield return new WaitForSeconds(1);
+
+        loadSceneAdditive.Level1();
+        transitionContent.SetActive(false);
+        transitionAnimations.PlayBarsOut();
+
+        yield break;
     }
 
 }

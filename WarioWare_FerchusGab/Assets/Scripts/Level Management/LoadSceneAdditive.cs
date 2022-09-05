@@ -18,7 +18,10 @@ public class LoadSceneAdditive : MonoBehaviour
 
     private void UnloadLevel(int previousLevel)
     {
-        SceneManager.UnloadSceneAsync(previousLevel);
+        if (SceneManager.GetActiveScene() == SceneManager.GetSceneByBuildIndex(previousLevel))
+        {
+            SceneManager.UnloadSceneAsync(previousLevel);
+        }
     }
 
     // Prototyping
