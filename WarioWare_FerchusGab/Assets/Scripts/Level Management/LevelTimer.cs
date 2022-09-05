@@ -8,8 +8,7 @@ public class LevelTimer : MonoBehaviour
 
     [SerializeField] LoadSceneAdditive loadSceneAdditive;
     [SerializeField] TransitionAnimations transitionAnimations;
-    [SerializeField] GameObject transitionContent;
-
+    [SerializeField] GameObject intermissionCanvas;
 
     float levelDuration;
 
@@ -32,7 +31,7 @@ public class LevelTimer : MonoBehaviour
         yield return new WaitForSeconds(1);
 
         loadSceneAdditive.Level1();
-        transitionContent.SetActive(false);
+        intermissionCanvas.SetActive(false);
         transitionAnimations.PlayBarsOut();
 
         yield break;

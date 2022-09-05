@@ -23,4 +23,18 @@ public class CoinManager : MonoBehaviour
     {
         return coins;
     }
+
+    #region Prototyping
+    
+    /*
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            coins++;
+        }
+    }
+    */
+
+    #endregion
 }

@@ -4,15 +4,28 @@ using UnityEngine;
 
 public class HealthManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public static HealthManager instance;
+
+    public int maxHealth;
+    public int currentHealth;
+
+    private void Awake()
     {
-        
+        if (instance != null)
+        {
+            GameObject.DestroyImmediate(gameObject);
+        }
+        instance = this;
+        DontDestroyOnLoad(gameObject);
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Start()
     {
-        
+        currentHealth = maxHealth;
+    }
+
+    public int GetHealth()
+    {
+        return currentHealth;
     }
 }
