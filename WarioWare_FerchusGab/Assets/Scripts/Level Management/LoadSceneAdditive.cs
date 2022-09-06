@@ -24,7 +24,7 @@ public class LoadSceneAdditive : MonoBehaviour
         }
     }
 
-    // Prototyping
+    #region Prototyping
     public void Level1()
     {
         NextLevel(2, 1);
@@ -34,4 +34,5 @@ public class LoadSceneAdditive : MonoBehaviour
     {
         NextLevel(1, 2);
     }
+    #endregion
 }

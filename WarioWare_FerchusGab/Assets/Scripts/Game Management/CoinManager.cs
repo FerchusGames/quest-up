@@ -7,7 +7,7 @@ public class CoinManager : MonoBehaviour
     public static CoinManager instance;
 
     public int coins;
-    [SerializeField] int coinMultiplier = 1;
+    public int coinMultiplier = 1;    
 
     private void Awake()
     {
