@@ -8,8 +8,8 @@ namespace QuestUp
     {
         public static HealthManager Instance { get; private set; }
 
-        public int _maxHealth = default;
-        public int _currentHealth = default;
+        [field: SerializeField] public int MaxHealth { get; private set; }  = default;
+        [field: SerializeField] public int CurrentHealth { get; private set; }  = default;
 
         private void Awake()
         {
@@ -23,12 +23,17 @@ namespace QuestUp
 
         private void Start()
         {
-            _currentHealth = _maxHealth;
+            CurrentHealth = MaxHealth;
         }
 
         public int GetHealth()
         {
-            return _currentHealth;
+            return CurrentHealth;
+        }
+
+        public void LoseHealth(int damage)
+        {
+            CurrentHealth -= damage;
         }
     }
 }
