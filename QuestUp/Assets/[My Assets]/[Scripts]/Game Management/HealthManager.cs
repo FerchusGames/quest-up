@@ -4,28 +4,28 @@ using UnityEngine;
 
 public class HealthManager : MonoBehaviour
 {
-    public static HealthManager instance;
+    public static HealthManager Instance { get; private set; }
 
-    public int maxHealth;
-    public int currentHealth;
+    public int _maxHealth;
+    public int _currentHealth;
 
     private void Awake()
     {
-        if (instance != null)
+        if (Instance != null)
         {
             GameObject.DestroyImmediate(gameObject);
         }
-        instance = this;
+        Instance = this;
         DontDestroyOnLoad(gameObject);
     }
 
     private void Start()
     {
-        currentHealth = maxHealth;
+        _currentHealth = _maxHealth;
     }
 
     public int GetHealth()
     {
-        return currentHealth;
+        return _currentHealth;
     }
 }

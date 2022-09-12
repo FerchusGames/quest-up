@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class CoinUI : MonoBehaviour
+public class HealthUI : MonoBehaviour
 {
     private TMP_Text text;
 
@@ -14,6 +14,6 @@ public class CoinUI : MonoBehaviour
 
     void Update()
     {
-        text.text = "Coins: " + CoinManager.instance.GetCoins();
+        text.text = "Health: " + HealthManager.Instance.GetHealth();
     }
 }
