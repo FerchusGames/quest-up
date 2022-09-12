@@ -2,39 +2,42 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LevelTimer : MonoBehaviour
+namespace QuestUp
 {
-    public LevelSO _levelSO = null;
-
-    [SerializeField] private LoadSceneAdditive _loadSceneAdditive = null;
-    [SerializeField] private TransitionAnimations _transitionAnimations = null;
-    [SerializeField] private GameObject _intermissionCanvas = null;
-
-    private float _levelDuration = 0f;
-
-    private void Start()
+    public class LevelTimer : MonoBehaviour
     {
-        StartLevelTimer();
-    }
+        public LevelSO _levelSO = null;
 
-    public void StartLevelTimer()
-    {
-        _levelDuration = _levelSO.LevelDuration;
-        Timer.OnTimerEnd(_levelDuration, () => StartCoroutine(GoToLevel()));
-    }
+        [SerializeField] private LoadSceneAdditive _loadSceneAdditive = null;
+        [SerializeField] private TransitionAnimations _transitionAnimations = null;
+        [SerializeField] private GameObject _intermissionCanvas = null;
+
+        private float _levelDuration = default;
+
+        private void Start()
+        {
+            StartLevelTimer();
+        }
+
+        public void StartLevelTimer()
+        {
+            _levelDuration = _levelSO.LevelDuration;
+            Timer.OnTimerEnd(_levelDuration, () => StartCoroutine(GoToLevel()));
+        }
    
 
-    IEnumerator GoToLevel()
-    {
-        _transitionAnimations.PlayBarsIn();
+        IEnumerator GoToLevel()
+        {
+            _transitionAnimations.PlayBarsIn();
 
-        yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(1);
 
-        _loadSceneAdditive.Level1();
-        _intermissionCanvas.SetActive(false);
-        _transitionAnimations.PlayBarsOut();
+            _loadSceneAdditive.Level1();
+            _intermissionCanvas.SetActive(false);
+            _transitionAnimations.PlayBarsOut();
 
-        yield break;
+            yield break;
+        }
     }
 
 }

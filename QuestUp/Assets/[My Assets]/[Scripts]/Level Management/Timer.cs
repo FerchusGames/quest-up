@@ -1,12 +1,15 @@
 using System;
 using System.Threading.Tasks;
 
-public static class Timer
+namespace QuestUp
 {
-    public static async void OnTimerEnd(float _secondsDelay, Action a)
+    public static class Timer
     {
-        int _millisecondsDelay = (int)_secondsDelay * 1000; // Task.Delay takes milliseconds, so we convert the value
-        await Task.Delay(_millisecondsDelay);
-        a?.Invoke();
+        public static async void OnTimerEnd(float secondsDelay, Action a)
+        {
+            int millisecondsDelay = (int)secondsDelay * 1000; // Task.Delay takes milliseconds, so we convert the value
+            await Task.Delay(millisecondsDelay);
+            a?.Invoke();
+        }
     }
 }

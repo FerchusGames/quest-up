@@ -3,17 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class HealthUI : MonoBehaviour
+namespace QuestUp
 {
-    private TMP_Text text;
-
-    private void Start()
+    public class HealthUI : MonoBehaviour
     {
-        text = GetComponent<TMP_Text>();
-    }
+        private TMP_Text _text = null;
 
-    void Update()
-    {
-        text.text = "Health: " + HealthManager.Instance.GetHealth();
+        private void Start()
+        {
+            _text = GetComponent<TMP_Text>();
+        }
+
+        void Update()
+        {
+            _text.text = "Health: " + HealthManager.Instance.GetHealth();
+        }
     }
 }

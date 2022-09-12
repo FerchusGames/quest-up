@@ -2,12 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ToggleSetActive : MonoBehaviour
+namespace QuestUp
 {
-    [SerializeField] GameObject _objectToToggle;
-
-    public void _ToggleSetActive()
+    public class ToggleSetActive : MonoBehaviour
     {
-        _objectToToggle.SetActive(!_objectToToggle.activeSelf);
+        [SerializeField] private GameObject _objectToToggle = null;
+
+        public void _ToggleSetActive()
+        {
+            _objectToToggle.SetActive(!_objectToToggle.activeSelf);
+        }
     }
 }

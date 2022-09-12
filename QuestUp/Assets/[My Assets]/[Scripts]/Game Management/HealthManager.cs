@@ -2,30 +2,33 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HealthManager : MonoBehaviour
+namespace QuestUp
 {
-    public static HealthManager Instance { get; private set; }
-
-    public int _maxHealth;
-    public int _currentHealth;
-
-    private void Awake()
+    public class HealthManager : MonoBehaviour
     {
-        if (Instance != null)
+        public static HealthManager Instance { get; private set; }
+
+        public int _maxHealth = default;
+        public int _currentHealth = default;
+
+        private void Awake()
         {
-            GameObject.DestroyImmediate(gameObject);
+            if (Instance != null)
+            {
+                GameObject.DestroyImmediate(gameObject);
+            }
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
         }
-        Instance = this;
-        DontDestroyOnLoad(gameObject);
-    }
 
-    private void Start()
-    {
-        _currentHealth = _maxHealth;
-    }
+        private void Start()
+        {
+            _currentHealth = _maxHealth;
+        }
 
-    public int GetHealth()
-    {
-        return _currentHealth;
+        public int GetHealth()
+        {
+            return _currentHealth;
+        }
     }
 }

@@ -3,24 +3,27 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class LoadTransitionOnStart : MonoBehaviour
+namespace QuestUp
 {
-    LoadTransitionOnStart instance;
-    private void Awake()
+    public class LoadTransitionOnStart : MonoBehaviour
     {
-        if (instance != null)
+        public static LoadTransitionOnStart Instance { get; private set; }
+        private void Awake()
         {
-            GameObject.DestroyImmediate(gameObject);
+            if (Instance != null)
+            {
+                GameObject.DestroyImmediate(gameObject);
+            }
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
         }
-        instance = this;
-        DontDestroyOnLoad(gameObject);
-    }
 
-    void Start()
-    {
-        if (SceneManager.GetActiveScene().buildIndex != 0)
-        { 
-            SceneManager.LoadSceneAsync(0, LoadSceneMode.Additive);
+        void Start()
+        {
+            if (SceneManager.GetActiveScene().buildIndex != 0)
+            { 
+                SceneManager.LoadSceneAsync(0, LoadSceneMode.Additive);
+            }
         }
     }
 }
