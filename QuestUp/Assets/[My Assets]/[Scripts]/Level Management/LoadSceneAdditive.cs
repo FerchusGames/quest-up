@@ -20,22 +20,10 @@ namespace QuestUp
 
         private void UnloadLevel(int previousLevel)
         {
-            if (SceneManager.GetActiveScene() == SceneManager.GetSceneByBuildIndex(previousLevel))
+            if (previousLevel != 0 && SceneManager.GetActiveScene() == SceneManager.GetSceneByBuildIndex(previousLevel))
             {
                 SceneManager.UnloadSceneAsync(previousLevel);
             }
         }
-
-        #region Prototyping
-        public void Level1()
-        {
-            NextLevel(2, 1);
-        }
-
-        public void Level2()
-        {
-            NextLevel(1, 2);
-        }
-        #endregion
     }
 }

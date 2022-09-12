@@ -14,25 +14,19 @@ namespace QuestUp
 
         private float _levelDuration = default;
 
-        private void Start()
-        {
-            StartLevelTimer();
-        }
-
-        public void StartLevelTimer()
+        public void StartLevelTimer(int levelIndex)
         {
             _levelDuration = _levelSO.LevelDuration;
-            Timer.OnTimerEnd(_levelDuration, () => StartCoroutine(GoToLevel()));
+            Timer.OnTimerEnd(_levelDuration, () => StartCoroutine(GoToLevel(1)));
         }
-   
 
-        IEnumerator GoToLevel()
+        IEnumerator GoToLevel(int levelIndex)
         {
             _transitionAnimations.PlayBarsIn();
 
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(1); 
 
-            _loadSceneAdditive.Level1();
+            _loadSceneAdditive.NextLevel(2, 1); // ! Need to get level index
             _intermissionCanvas.SetActive(false);
             _transitionAnimations.PlayBarsOut();
 
