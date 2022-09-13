@@ -8,7 +8,7 @@ namespace QuestUp
     {
         public static GameManager Instance { get; private set; }
 
-        [field: SerializeField] public int LevelCount { get; private set; } = default;
+        [field: SerializeField] public int LevelCount { get; private set; } 
 
         private void Awake()
         {

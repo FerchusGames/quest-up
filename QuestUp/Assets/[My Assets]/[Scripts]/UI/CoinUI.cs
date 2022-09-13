@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
@@ -16,7 +14,7 @@ namespace QuestUp
 
         void Update()
         {
-            _text.text = "Coins: " + CoinManager.Instance.GetCoins();
+            _text.text = "Coins: " + CoinManager.Instance.Coins;
         }
     }
 }

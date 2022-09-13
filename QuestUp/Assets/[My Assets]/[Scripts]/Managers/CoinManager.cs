@@ -8,8 +8,8 @@ namespace QuestUp
     {
         public static CoinManager Instance { get; private set; }
 
-        public int _coins = default;
-        public int _coinMultiplier = 1;    
+        [field: SerializeField] public int Coins { get; private set; }
+        [field: SerializeField] public int CoinMultiplier { get; private set; } = 1;    
 
         private void Awake()
         {
@@ -19,11 +19,6 @@ namespace QuestUp
             }
             Instance = this;   
             DontDestroyOnLoad(gameObject);
-        }
-    
-        public int GetCoins()
-        {
-            return _coins;
         }
     }
 }
