@@ -12,7 +12,7 @@ namespace QuestUp
             _text = GetComponent<TMP_Text>();
         }
 
-        void Update()
+        private void Update() // TODO: This should be triggered by an event in CoinManager
         {
             _text.text = "Coins: " + CoinManager.Instance.Coins;
         }

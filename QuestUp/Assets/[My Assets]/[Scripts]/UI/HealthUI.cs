@@ -12,7 +12,7 @@ namespace QuestUp
             _text = GetComponent<TMP_Text>();
         }
 
-        void Update()
+        void Update() // TODO: This should be triggered by an event in HealthManager
         {
             _text.text = "Health: " + HealthManager.Instance.CurrentHealth;
         }

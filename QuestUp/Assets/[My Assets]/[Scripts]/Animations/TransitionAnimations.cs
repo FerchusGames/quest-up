@@ -1,5 +1,5 @@
+using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace QuestUp
@@ -8,13 +8,27 @@ namespace QuestUp
     {
         public Animator _animator = null;
 
-        public void PlayBarsIn()
+        public void TriggerTransition(Action onTransitionComplete)
+        {
+            StartCoroutine(TriggerTransitionCoroutine(onTransitionComplete));
+        }
+
+        private IEnumerator TriggerTransitionCoroutine(Action onTransitionComplete)
+        {
+            PlayBarsIn();
+            yield return new WaitForSeconds(1);
+            onTransitionComplete?.Invoke();
+            yield return new WaitForSeconds(0.2f);
+            PlayBarsOut();
+        }
+
+        private void PlayBarsIn()
         {
             _animator.ResetTrigger("BarsOut");
             _animator.SetTrigger("BarsIn");
         }
 
-        public void PlayBarsOut()
+        private void PlayBarsOut()
         {
             _animator.ResetTrigger("BarsIn");
             _animator.SetTrigger("BarsOut");

@@ -11,6 +11,7 @@ namespace QuestUp
         public static LevelManager Instance { get; private set; }
 
         [field: SerializeField] public LevelSO CurrentLevelSO { get; private set; }
+        [field: SerializeField] public int TimeLeft { get; private set; }   
 
         private void Awake()
         {
@@ -22,10 +23,25 @@ namespace QuestUp
             DontDestroyOnLoad(gameObject);
         }
 
+        private void Start()
+        {
+            StartLevelTimer();
+        }
+
         public void StartLevelTimer()
         {
-            float levelDuration = CurrentLevelSO.LevelDuration;
-            //Timer.OnTimerEnd(_levelDuration, () => StartCoroutine(GoToLevel(1)));
+            TimeLeft = CurrentLevelSO.LevelDuration;
+            StartCoroutine("Countdown");
+        }
+
+        private IEnumerator Countdown()
+        {
+            int timerSeconds = TimeLeft;
+            for (int i = 0; i < timerSeconds; i++)
+            {
+                yield return new WaitForSeconds(1);
+                TimeLeft--;
+            }
         }
     }
 }

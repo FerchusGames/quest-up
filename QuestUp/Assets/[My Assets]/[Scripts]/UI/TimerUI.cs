@@ -11,5 +11,10 @@ namespace QuestUp
         {
             _text = GetComponent<TMP_Text>();
         }
+
+        private void Update() // TODO: This should be triggered by an event in LevelManager
+        {
+            _text.text = LevelManager.Instance.TimeLeft.ToString();
+        }
     }
 }
