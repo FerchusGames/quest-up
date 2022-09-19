@@ -14,10 +14,13 @@ namespace QuestUp
         {
             if (Instance != null)
             {
-                GameObject.DestroyImmediate(gameObject);
+                Destroy(gameObject);
             }
-            Instance = this;
-            DontDestroyOnLoad(gameObject);
+            else
+            {
+                Instance = this;
+                DontDestroyOnLoad(gameObject);
+            }
         }
 
         private void Update()

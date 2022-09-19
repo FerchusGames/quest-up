@@ -13,12 +13,15 @@ namespace QuestUp
 
         private void Awake()
         {
-            if(Instance != null)
+            if (Instance != null)
             {
-                GameObject.DestroyImmediate(gameObject);
+                Destroy(gameObject);
             }
-            Instance = this;   
-            DontDestroyOnLoad(gameObject);
+            else
+            {
+                Instance = this;
+                DontDestroyOnLoad(gameObject);
+            }
         }
     }
 }
