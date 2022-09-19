@@ -42,7 +42,7 @@ Camera:
   m_GameObject: {fileID: 248568311}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
+  m_ClearFlags: 4
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
@@ -161,6 +161,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 2
     m_TransformParent: {fileID: 996733982922294407}
     m_Modifications:
     - target: {fileID: 4670503946300771458, guid: 62f3e4ee2bc5f0d458e240ae2b241489, type: 3}
@@ -276,6 +277,7 @@ PrefabInstance:
       value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 62f3e4ee2bc5f0d458e240ae2b241489, type: 3}
 --- !u!114 &2014820726554761228 stripped
 MonoBehaviour:

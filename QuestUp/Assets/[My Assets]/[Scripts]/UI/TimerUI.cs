@@ -14,7 +14,7 @@ namespace QuestUp
 
         private void Update() // TODO: This should be triggered by an event in LevelManager
         {
-            _text.text = LevelManager.Instance.TimeLeft.ToString();
+            _text.text = LevelController.Instance.TimeLeft.ToString();
         }
     }
 }

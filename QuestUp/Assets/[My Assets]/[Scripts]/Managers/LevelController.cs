@@ -6,24 +6,15 @@ using UnityEngine.SceneManagement;
 
 namespace QuestUp
 {
-    public class LevelManager : MonoBehaviour
+    public class LevelController : MonoBehaviour
     {
-        public static LevelManager Instance { get; private set; }
-
+        public static LevelController Instance { get; private set; }
         [field: SerializeField] public LevelSO CurrentLevelSO { get; private set; }
-        [field: SerializeField] public int TimeLeft { get; private set; }   
+        [field: SerializeField] public int TimeLeft { get; private set; }
 
         private void Awake()
         {
-            if (Instance != null)
-            {
-                Destroy(gameObject);
-            }
-            else
-            {
-                Instance = this;
-                DontDestroyOnLoad(gameObject);
-            }
+            Instance = this;
         }
 
         private void Start()
@@ -45,6 +36,7 @@ namespace QuestUp
                 yield return new WaitForSeconds(1);
                 TimeLeft--;
             }
+            TransitionManager.Instance.NextLevel("Intermission");
         }
     }
 }

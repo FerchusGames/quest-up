@@ -16,7 +16,7 @@ namespace QuestUp
         private IEnumerator TriggerTransitionCoroutine(Action onTransitionComplete)
         {
             PlayBarsIn();
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(1); 
             onTransitionComplete?.Invoke();
             yield return new WaitForSeconds(0.2f);
             PlayBarsOut();
