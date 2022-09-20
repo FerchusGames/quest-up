@@ -3,10 +3,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class IntermissionController : MonoBehaviour
+namespace QuestUp
 {
-    public void GoToNextLevel()
+    public class IntermissionController : MonoBehaviour
     {
-        TransitionManager.Instance.NextLevel("Level1");
+        public void GoToNextLevel()
+        {
+            TransitionManager.Instance.NextLevel("Level1");
+        }
     }
 }

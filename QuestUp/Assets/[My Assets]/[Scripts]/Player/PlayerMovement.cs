@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace QuestUp
@@ -10,12 +8,12 @@ namespace QuestUp
 
         [SerializeField] private Joystick _joystick = null;
 
-        private Rigidbody2D _rb = null;
+        private Rigidbody2D _rigidBody2D = null;
         private Vector2 _movement = default;
 
         private void Start()
         {
-            _rb = GetComponent<Rigidbody2D>();
+            _rigidBody2D = GetComponent<Rigidbody2D>();
         }
 
         private void Update()
@@ -32,7 +30,7 @@ namespace QuestUp
 
         private void MovePlayer()
         {
-            _rb.MovePosition(_rb.position + _movement * _moveSpeed * Time.fixedDeltaTime);
+            _rigidBody2D.MovePosition(_rigidBody2D.position + _movement * _moveSpeed * Time.fixedDeltaTime);
         }
     }
 }

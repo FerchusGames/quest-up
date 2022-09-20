@@ -3,10 +3,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameOverController : MonoBehaviour
+namespace QuestUp
 {
-    public void GoToMainMenu()
+    public class GameOverScreenController : MonoBehaviour
     {
-        TransitionManager.Instance.NextLevel("MainMenu");
+        public void GoToMainMenu()
+        {
+            TransitionManager.Instance.NextLevel("MainMenu");
+        }
     }
 }

@@ -3,10 +3,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PrototypingHealthController : MonoBehaviour
+namespace QuestUp
 {
-    public void PrototypingLoseHealth(int damageValue)
+    public class PrototypingHealthController : MonoBehaviour
     {
-        HealthManager.Instance.LoseHealth(damageValue);
+        public void PrototypingLoseHealth(int damageValue)
+        {
+            HealthManager.Instance.LoseHealth(damageValue);
+        }
     }
 }

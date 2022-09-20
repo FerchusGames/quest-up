@@ -3,20 +3,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ManagerInstanceDestroyer : MonoBehaviour
+namespace QuestUp
 {
-    private void Awake()
+    public class ManagerInstanceDestroyer : MonoBehaviour
     {
-        DestroyManagerInstance(HealthManager.Instance.gameObject);
-        DestroyManagerInstance(CoinManager.Instance.gameObject);
-        DestroyManagerInstance(GameManager.Instance.gameObject);
-    }
-
-    private void DestroyManagerInstance(GameObject gameObject)
-    {
-        if (gameObject != null)
+        private void Awake()
         {
-            Destroy(gameObject);
+            DestroyManagerInstance(HealthManager.Instance.gameObject);
+            DestroyManagerInstance(CoinManager.Instance.gameObject);
+            DestroyManagerInstance(GameManager.Instance.gameObject);
+        }
+
+        private void DestroyManagerInstance(GameObject gameObject)
+        {
+            if (gameObject != null)
+            {
+                Destroy(gameObject);
+            }
         }
     }
 }

@@ -22,7 +22,7 @@ namespace QuestUp
             StartLevelTimer();
         }
 
-        public void StartLevelTimer()
+        private void StartLevelTimer()
         {
             TimeLeft = CurrentLevelSO.LevelDuration;
             StartCoroutine("Countdown");
