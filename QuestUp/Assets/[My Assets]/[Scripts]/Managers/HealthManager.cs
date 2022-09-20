@@ -31,7 +31,8 @@ namespace QuestUp
 
         public void LoseHealth(int damage)
         {
-            CurrentHealth -= damage;
+            
+            CurrentHealth = Mathf.Clamp(CurrentHealth - damage, 0, MaxHealth);   
         }
     }
 }
