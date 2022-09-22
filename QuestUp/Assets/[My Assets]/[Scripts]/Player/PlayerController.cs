@@ -7,32 +7,38 @@ namespace QuestUp
 {
     public class PlayerController : MonoBehaviour
     {
-        private PlayerInputActions _playerControls;
-        private CharacterController _characterController;
-        private InputAction _moveInputAction;
-
-        Vector2 _moveDirection = Vector2.zero;
+        private PlayerInput _playerInput = null;
+        private CharacterController _characterController = null;
+        private PlayerInputActions _playerInputActions = null;
+        private Vector2 _moveDirection = Vector2.zero;
 
         private void Awake()
         {
-            _playerControls = new PlayerInputActions();
+            _playerInput = GetComponent<PlayerInput>();
             _characterController = GetComponent<CharacterController>();
+
+            _playerInputActions = new PlayerInputActions();
+            _playerInputActions.Player.Enable();
+            _playerInputActions.Player.Move.performed += Move_performed;
+        }
+
+        private void Move_performed(InputAction.CallbackContext context)
+        {
+            Debug.Log(context.ReadValue<Vector2>());
         }
 
         private void OnEnable()
         {
-            _moveInputAction = _playerControls.Battle.Move;
+           _playerInputActions.Enable();
         }
 
         private void OnDisable()
         {
-            _moveInputAction.Disable();
+            _playerInputActions.Disable();
         }
 
         void Update()
         {
-            _moveDirection = _moveInputAction.ReadValue<Vector2>();
-            Debug.Log(_moveDirection);
             _characterController.Move(_moveDirection * 1000);
         }
     }   

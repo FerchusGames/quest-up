@@ -24,7 +24,7 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
     ""name"": ""PlayerInputActions"",
     ""maps"": [
         {
-            ""name"": ""Battle"",
+            ""name"": ""Player"",
             ""id"": ""91b0f39e-127b-47d2-95bc-7e8dfcc477bf"",
             ""actions"": [
                 {
@@ -54,9 +54,9 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
     ],
     ""controlSchemes"": []
 }");
-        // Battle
-        m_Battle = asset.FindActionMap("Battle", throwIfNotFound: true);
-        m_Battle_Move = m_Battle.FindAction("Move", throwIfNotFound: true);
+        // Player
+        m_Player = asset.FindActionMap("Player", throwIfNotFound: true);
+        m_Player_Move = m_Player.FindAction("Move", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -113,29 +113,29 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
         return asset.FindBinding(bindingMask, out action);
     }
 
-    // Battle
-    private readonly InputActionMap m_Battle;
-    private IBattleActions m_BattleActionsCallbackInterface;
-    private readonly InputAction m_Battle_Move;
-    public struct BattleActions
+    // Player
+    private readonly InputActionMap m_Player;
+    private IPlayerActions m_PlayerActionsCallbackInterface;
+    private readonly InputAction m_Player_Move;
+    public struct PlayerActions
     {
         private @PlayerInputActions m_Wrapper;
-        public BattleActions(@PlayerInputActions wrapper) { m_Wrapper = wrapper; }
-        public InputAction @Move => m_Wrapper.m_Battle_Move;
-        public InputActionMap Get() { return m_Wrapper.m_Battle; }
+        public PlayerActions(@PlayerInputActions wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Move => m_Wrapper.m_Player_Move;
+        public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
         public bool enabled => Get().enabled;
-        public static implicit operator InputActionMap(BattleActions set) { return set.Get(); }
-        public void SetCallbacks(IBattleActions instance)
+        public static implicit operator InputActionMap(PlayerActions set) { return set.Get(); }
+        public void SetCallbacks(IPlayerActions instance)
         {
-            if (m_Wrapper.m_BattleActionsCallbackInterface != null)
+            if (m_Wrapper.m_PlayerActionsCallbackInterface != null)
             {
-                @Move.started -= m_Wrapper.m_BattleActionsCallbackInterface.OnMove;
-                @Move.performed -= m_Wrapper.m_BattleActionsCallbackInterface.OnMove;
-                @Move.canceled -= m_Wrapper.m_BattleActionsCallbackInterface.OnMove;
+                @Move.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMove;
+                @Move.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMove;
+                @Move.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMove;
             }
-            m_Wrapper.m_BattleActionsCallbackInterface = instance;
+            m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
             {
                 @Move.started += instance.OnMove;
@@ -144,8 +144,8 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
             }
         }
     }
-    public BattleActions @Battle => new BattleActions(this);
-    public interface IBattleActions
+    public PlayerActions @Player => new PlayerActions(this);
+    public interface IPlayerActions
     {
         void OnMove(InputAction.CallbackContext context);
     }
