@@ -7,25 +7,35 @@ namespace QuestUp
 {
     public class PlayerController : MonoBehaviour
     {
+        [SerializeField] private float _movementSpeed;
+
         private PlayerInput _playerInput = null;
-        private CharacterController _characterController = null;
+        private Rigidbody2D _rigidbody2D = null;
         private PlayerInputActions _playerInputActions = null;
         private Vector2 _moveDirection = Vector2.zero;
 
         private void Awake()
         {
             _playerInput = GetComponent<PlayerInput>();
-            _characterController = GetComponent<CharacterController>();
+            _rigidbody2D = GetComponent<Rigidbody2D>();
 
             _playerInputActions = new PlayerInputActions();
             _playerInputActions.Player.Enable();
-            _playerInputActions.Player.Move.performed += Move_performed;
+
+            _playerInputActions.Player.Move.performed += MoveInput;
+            _playerInputActions.Player.Move.canceled += MoveInput;
         }
 
-        private void Move_performed(InputAction.CallbackContext context)
+        void Update()
         {
+            _rigidbody2D.velocity = _moveDirection * _movementSpeed;
+        }
+        private void MoveInput(InputAction.CallbackContext context)
+        {
+            _moveDirection = context.ReadValue<Vector2>();
             Debug.Log(context.ReadValue<Vector2>());
         }
+
 
         private void OnEnable()
         {
@@ -35,11 +45,6 @@ namespace QuestUp
         private void OnDisable()
         {
             _playerInputActions.Disable();
-        }
-
-        void Update()
-        {
-            _characterController.Move(_moveDirection * 1000);
         }
     }   
 }
