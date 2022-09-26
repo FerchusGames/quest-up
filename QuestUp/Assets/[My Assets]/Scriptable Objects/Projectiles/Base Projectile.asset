@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e64a229ecaf0f374c9bdd73a08dbdf2c, type: 3}
   m_Name: Base Projectile
   m_EditorClassIdentifier: 
-  <Speed>k__BackingField: 0
+  <Speed>k__BackingField: 10
   <Damage>k__BackingField: 0
   <EffectDuration>k__BackingField: 0
   <KnockbackOnShoot>k__BackingField: 0
