@@ -33,7 +33,7 @@ namespace QuestUp
         private void MoveInput(InputAction.CallbackContext context)
         {
             _moveDirection = context.ReadValue<Vector2>();
-            Debug.Log(context.ReadValue<Vector2>());
+            //Debug.Log(context.ReadValue<Vector2>());
         }
 
 
