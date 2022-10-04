@@ -44,6 +44,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Borders & Outside
+    uniqueID: 2868542855
+    locked: 0
   - name: UI
     uniqueID: 14421519
     locked: 0

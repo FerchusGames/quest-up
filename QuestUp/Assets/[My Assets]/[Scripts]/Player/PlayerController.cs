@@ -26,13 +26,10 @@ namespace QuestUp
             _playerInputActions.Player.Move.canceled += MoveInput;
         }
 
-        void Update()
-        {
-            _rigidbody2D.velocity = _moveDirection * _movementSpeed;
-        }
         private void MoveInput(InputAction.CallbackContext context)
         {
             _moveDirection = context.ReadValue<Vector2>();
+            _rigidbody2D.velocity = _moveDirection * _movementSpeed;
             //Debug.Log(context.ReadValue<Vector2>());
         }
 
