@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace QuestUp
@@ -8,8 +6,8 @@ namespace QuestUp
     {
         public static HealthManager Instance { get; private set; }
 
-        [field: SerializeField] public int MaxHealth { get; private set; }  
-        [field: SerializeField] public int CurrentHealth { get; private set; }  
+        [field: SerializeField] public int MaxHealth { get; private set; }
+        [field: SerializeField] public int CurrentHealth { get; private set; }
 
         private void Awake()
         {
@@ -31,8 +29,7 @@ namespace QuestUp
 
         public void LoseHealth(int damage)
         {
-            
-            CurrentHealth = Mathf.Clamp(CurrentHealth - damage, 0, MaxHealth);   
+            CurrentHealth = Mathf.Clamp(CurrentHealth - damage, 0, MaxHealth);
         }
     }
 }

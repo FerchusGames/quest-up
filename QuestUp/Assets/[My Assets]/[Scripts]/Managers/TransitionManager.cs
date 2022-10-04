@@ -7,7 +7,7 @@ namespace QuestUp
     {
         public static TransitionManager Instance { get; private set; }
 
-        [SerializeField] private TransitionAnimations _transitionAnimations;
+        [SerializeField] private TransitionAnimations _transitionAnimations = null;
 
         private void Awake()
         {
