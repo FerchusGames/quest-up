@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace QuestUp
@@ -7,7 +5,9 @@ namespace QuestUp
     public class GameManager : MonoBehaviour
     {
         public static GameManager Instance { get; private set; }
+
         [field: SerializeField] public int LevelCount { get; private set; }
+
         private bool _keepPlaying = true;
 
         private void Awake()

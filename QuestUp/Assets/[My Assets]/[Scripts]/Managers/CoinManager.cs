@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace QuestUp
@@ -9,7 +7,7 @@ namespace QuestUp
         public static CoinManager Instance { get; private set; }
 
         [field: SerializeField] public int Coins { get; private set; }
-        [field: SerializeField] public int CoinMultiplier { get; private set; } = 1;    
+        [field: SerializeField] public int CoinMultiplier { get; private set; } = 1;
 
         private void Awake()
         {
