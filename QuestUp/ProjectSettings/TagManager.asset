@@ -8,7 +8,7 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Player Borders
   - Water
   - UI
   - Transition
@@ -38,6 +38,15 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Background
+    uniqueID: 2280011047
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Borders & Outside
+    uniqueID: 2868542855
+    locked: 0
+  - name: UI
+    uniqueID: 14421519
     locked: 0
