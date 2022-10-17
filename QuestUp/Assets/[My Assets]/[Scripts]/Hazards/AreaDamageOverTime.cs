@@ -9,7 +9,7 @@ namespace QuestUp
         [SerializeField] private int _damageValue = default;
         [SerializeField] private float _damageRate = default;
 
-        private IEnumerator _coroutine;
+        private IEnumerator _coroutine = null;
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
