@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3108842715334783188}
   - component: {fileID: 5061883623720500564}
   - component: {fileID: 436860058}
+  - component: {fileID: 5603145088597316855}
   m_Layer: 0
   m_Name: Laser Beam
   m_TagString: Untagged
@@ -33,7 +34,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &3108842715334783195
 SpriteRenderer:
@@ -145,5 +146,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f0868c5bfaab2b4689dca7e945e5ccf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _damageValue: 2
+  _audioClip: {fileID: 8300000, guid: fd6f696ccbdce594794e89169dbad7fc, type: 3}
+  _damageValue: 1
   _damageRate: 0.5
+--- !u!114 &5603145088597316855
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3108842715334783193}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b642d5a8dd6ec1741be0e0f87c5f8fe6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _audioClip: {fileID: 8300000, guid: 45218db85ea1c08409096f6b5b305732, type: 3}
+  _damageValue: 2
