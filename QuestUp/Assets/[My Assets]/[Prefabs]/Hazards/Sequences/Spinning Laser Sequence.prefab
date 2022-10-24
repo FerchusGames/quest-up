@@ -45,8 +45,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8bd2c2804aae9f41bdf94fd6a6caf95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _hazard: {fileID: 0}
-  _laserCount: 0
+  _hazard: {fileID: 729339673734078835, guid: ca52b39d4cf38c0479ed713c250cf96a, type: 3}
+  _laserCount: 1
   _rotationSpeed: 30
   _maxDirectionDuration: 10
 --- !u!1 &6261738713030083947

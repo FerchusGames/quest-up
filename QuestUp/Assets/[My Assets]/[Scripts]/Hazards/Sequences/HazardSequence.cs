@@ -7,7 +7,7 @@ namespace QuestUp
     {
         [SerializeField] protected GameObject _hazard = null;
 
-        protected virtual void OnEnable()
+        protected virtual void Start()
         {
             StartCoroutine(Sequence());
         }

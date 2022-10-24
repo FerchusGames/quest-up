@@ -33,10 +33,11 @@ namespace QuestUp
 
         private void SpawnLasers()
         {
+            _lasers = new GameObject[_laserCount];
+
             for (int i = 0; i < _laserCount; i++)
             {
-                _lasers[i] = Instantiate(_hazard, transform.position, GetLaserRotation(i)) as GameObject;
-                _lasers[i].transform.SetParent(gameObject.transform);
+                _lasers[i] = Instantiate(_hazard, transform.position, GetLaserRotation(i), transform);
             }
         }
         
@@ -54,15 +55,5 @@ namespace QuestUp
             currentRotation.z += _rotationSpeed * Time.deltaTime;
             transform.rotation = Quaternion.Euler(currentRotation);
         }
-
-        /*
-        private void OnDisable()
-        {
-            foreach (GameObject gameObject in _lasers)
-            {
-                Destroy(gameObject);
-            }
-        }
-         */
     }
 }
