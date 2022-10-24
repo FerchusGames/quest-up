@@ -14,12 +14,7 @@ namespace QuestUp
 
         private float _laserRotation = default;
 
-        private void Start()
-        {
-            StartCoroutine(Sequence());
-        }
-
-        public override IEnumerator Sequence()
+        protected override IEnumerator Sequence()
         {
             while (true)
             {
@@ -46,7 +41,7 @@ namespace QuestUp
             SetRotation();
             SetPosition();
 
-            GameObject laser = Instantiate(_hazardPrefab, _laserPosition, Quaternion.Euler(0, 0, _laserRotation));
+            GameObject laser = Instantiate(_hazard, _laserPosition, Quaternion.Euler(0, 0, _laserRotation));
             Destroy(laser, _laserLifespan);
         }
 
