@@ -4,9 +4,9 @@ namespace QuestUp
 {
     public class AreaDamageOnHit : MonoBehaviour
     {
-        [SerializeField] private AudioClip _audioClip;
+        [SerializeField] private AudioClip _audioClip = null;
 
-        [SerializeField] private int _damageValue;
+        [SerializeField] private int _damageValue = default;
 
         private void OnTriggerEnter2D(Collider2D collision)
         {

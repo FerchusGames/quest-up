@@ -13,7 +13,7 @@ namespace QuestUp
 
         protected override IEnumerator Sequence()
         {
-            SpawnLasers();
+            Spawn();
             StartCoroutine(ChangeDirection());
             while (true)
             {
@@ -31,7 +31,7 @@ namespace QuestUp
             }
         }
 
-        private void SpawnLasers()
+        protected override GameObject Spawn()
         {
             _lasers = new GameObject[_laserCount];
 
@@ -39,6 +39,7 @@ namespace QuestUp
             {
                 _lasers[i] = Instantiate(_hazard, transform.position, GetLaserRotation(i), transform);
             }
+            return null;
         }
         
         private Quaternion GetLaserRotation(int i)

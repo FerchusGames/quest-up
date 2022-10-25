@@ -18,7 +18,7 @@ namespace QuestUp
         {
             while (true)
             {
-                CreateLaser();
+                Spawn();
 
                 yield return new WaitForSeconds(_laserSpawnRate);
             }
@@ -36,13 +36,15 @@ namespace QuestUp
             _laserPosition = new Vector2(xPos, yPos);
         }
 
-        private void CreateLaser()
+        protected override GameObject Spawn()
         {
             SetRotation();
             SetPosition();
 
             GameObject laser = Instantiate(_hazard, _laserPosition, Quaternion.Euler(0, 0, _laserRotation));
             Destroy(laser, _laserLifespan);
+
+            return null;
         }
 
         private float Rotation360()

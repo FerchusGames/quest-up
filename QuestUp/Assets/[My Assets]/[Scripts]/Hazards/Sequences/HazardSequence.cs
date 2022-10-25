@@ -12,6 +12,8 @@ namespace QuestUp
             StartCoroutine(Sequence());
         }
 
+        protected abstract GameObject Spawn();
+
         protected abstract IEnumerator Sequence();
     }
 }

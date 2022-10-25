@@ -187,6 +187,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spinning Laser Sequence
       objectReference: {fileID: 0}
+    - target: {fileID: 6261738712825782519, guid: 707e7c6dce7068945a2a425fd6343c44, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 707e7c6dce7068945a2a425fd6343c44, type: 3}
@@ -344,8 +348,83 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 22
+  m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &342079216
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 2
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3734134041171264141, guid: 4621393165eabd0428784ac6f71eda62, type: 3}
+      propertyPath: m_Name
+      value: Nuke Sequence
+      objectReference: {fileID: 0}
+    - target: {fileID: 3734134041171264141, guid: 4621393165eabd0428784ac6f71eda62, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6619368418072192676, guid: 4621393165eabd0428784ac6f71eda62, type: 3}
+      propertyPath: m_RootOrder
+      value: 22
+      objectReference: {fileID: 0}
+    - target: {fileID: 6619368418072192676, guid: 4621393165eabd0428784ac6f71eda62, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6619368418072192676, guid: 4621393165eabd0428784ac6f71eda62, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6619368418072192676, guid: 4621393165eabd0428784ac6f71eda62, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6619368418072192676, guid: 4621393165eabd0428784ac6f71eda62, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6619368418072192676, guid: 4621393165eabd0428784ac6f71eda62, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6619368418072192676, guid: 4621393165eabd0428784ac6f71eda62, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6619368418072192676, guid: 4621393165eabd0428784ac6f71eda62, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6619368418072192676, guid: 4621393165eabd0428784ac6f71eda62, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6619368418072192676, guid: 4621393165eabd0428784ac6f71eda62, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6619368418072192676, guid: 4621393165eabd0428784ac6f71eda62, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9041137422610176525, guid: 4621393165eabd0428784ac6f71eda62, type: 3}
+      propertyPath: _nukeCount
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 9041137422610176525, guid: 4621393165eabd0428784ac6f71eda62, type: 3}
+      propertyPath: _areaBorderX
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 9041137422610176525, guid: 4621393165eabd0428784ac6f71eda62, type: 3}
+      propertyPath: _areaBorderY
+      value: 13
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_AddedGameObjects: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4621393165eabd0428784ac6f71eda62, type: 3}
 --- !u!1001 &349182735
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -30177,6 +30256,10 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 475783090756050227, guid: ec6fb6b6cde9621468b13eb8d5d952cf, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 475783091574591330, guid: ec6fb6b6cde9621468b13eb8d5d952cf, type: 3}
       propertyPath: m_Camera
       value: 

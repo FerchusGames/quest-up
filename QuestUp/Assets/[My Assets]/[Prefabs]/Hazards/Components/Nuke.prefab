@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7318849281104699791}
   - component: {fileID: 5095982029711581263}
   - component: {fileID: 2870780775654105181}
+  - component: {fileID: 183075099}
   m_Layer: 0
   m_Name: Nuke
   m_TagString: Untagged
@@ -33,7 +34,7 @@ Transform:
   - {fileID: 6940854843063479983}
   - {fileID: 9122109416738707745}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &5095982029711581263
 Animator:
@@ -67,6 +68,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57ada73423765a6438e483673bb4f6ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &183075099
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 717230827873020657}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5437932bf8abae74ab701ae2cdfb155d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _audioClip: {fileID: 8300000, guid: ff0ac53810759624b9094eeec2162787, type: 3}
 --- !u!1 &6282607701263123657
 GameObject:
   m_ObjectHideFlags: 0
@@ -78,6 +92,7 @@ GameObject:
   - component: {fileID: 9122109416738707745}
   - component: {fileID: 3414461941851101282}
   - component: {fileID: 1715453702554605819}
+  - component: {fileID: 2927721632781557898}
   m_Layer: 0
   m_Name: Explosion Area
   m_TagString: Untagged
@@ -140,7 +155,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -1
+  m_SortingOrder: -2
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
   m_Color: {r: 0.49803922, g: 0, b: 0, a: 0.49803922}
   m_FlipX: 0
@@ -159,7 +174,7 @@ CircleCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6282607701263123657}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
@@ -168,6 +183,20 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &2927721632781557898
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6282607701263123657}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b642d5a8dd6ec1741be0e0f87c5f8fe6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _audioClip: {fileID: 8300000, guid: 45218db85ea1c08409096f6b5b305732, type: 3}
+  _damageValue: 10
 --- !u!1 &7486746203036552294
 GameObject:
   m_ObjectHideFlags: 0
@@ -240,7 +269,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
   m_Color: {r: 1, g: 0, b: 0.0379858, a: 1}
   m_FlipX: 0
