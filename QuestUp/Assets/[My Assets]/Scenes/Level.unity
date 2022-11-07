@@ -189,7 +189,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6261738712825782519, guid: 707e7c6dce7068945a2a425fd6343c44, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -364,7 +364,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3734134041171264141, guid: 4621393165eabd0428784ac6f71eda62, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6619368418072192676, guid: 4621393165eabd0428784ac6f71eda62, type: 3}
       propertyPath: m_RootOrder
@@ -45488,6 +45488,10 @@ PrefabInstance:
       value: LevelManager
       objectReference: {fileID: 0}
     - target: {fileID: 2239660542103149849, guid: 59ffc55ae4d30884689b88050580c912, type: 3}
+      propertyPath: <TimeLeft>k__BackingField
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2239660542103149849, guid: 59ffc55ae4d30884689b88050580c912, type: 3}
       propertyPath: <CurrentLevelSO>k__BackingField
       value: 
       objectReference: {fileID: 11400000, guid: d902b02bebcc51747abc0fe99f4d6dab, type: 2}
@@ -45797,7 +45801,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6633394512023407599, guid: 7d2d3b2697a88c74690e17e2626e1dbc, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []

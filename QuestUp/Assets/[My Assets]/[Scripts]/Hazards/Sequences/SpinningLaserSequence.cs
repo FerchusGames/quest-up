@@ -7,7 +7,7 @@ namespace QuestUp
     {
         GameObject[] _lasers = null; 
 
-        [SerializeField] int _laserCount = default(int);
+        [SerializeField] int _laserCount = default;
         [SerializeField] float _rotationSpeed = default;
         [SerializeField] float _maxDirectionDuration = default;
 
