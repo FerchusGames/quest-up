@@ -8,6 +8,8 @@ namespace QuestUp
         [field: SerializeField] public int InitialLevel { get; private set; }
         [field: SerializeField] public int LastLevel { get; private set; }
 
+        [field:SerializeField] public int HazardAmount { get; private set; }
+
         [field: SerializeField] public float SpeedMinMultiplier { get; private set; }
         [field: SerializeField] public float SpeedMaxMultiplier { get; private set; }
 

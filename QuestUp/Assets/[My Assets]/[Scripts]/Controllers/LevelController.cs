@@ -33,6 +33,7 @@ namespace QuestUp
                 yield return new WaitForSeconds(1);
                 TimeLeft--;
             }
+            GameManager.Instance.NextLevel();
             TransitionManager.Instance.NextLevel("Intermission");
         }
     }

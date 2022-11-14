@@ -5,7 +5,7 @@ namespace QuestUp
 {
     public class SpinningLaserSequence : HazardSequence
     {
-        GameObject[] _lasers = null; 
+        private GameObject[] _lasers = null; 
 
         [SerializeField] int _laserCount = default;
         [SerializeField] float _rotationSpeed = default;
