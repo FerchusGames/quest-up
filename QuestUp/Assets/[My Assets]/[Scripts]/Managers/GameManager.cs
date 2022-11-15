@@ -21,11 +21,9 @@ namespace QuestUp
                 Instance = this;
                 DontDestroyOnLoad(gameObject);
             }
-        }
 
-        private void Start()
-        {
             _keepPlaying = true;
+            LevelCount = 1;
         }
 
         private void Update()
@@ -39,7 +37,14 @@ namespace QuestUp
 
         private void GameOverScreen()
         {
-            TransitionManager.Instance.NextLevel("GameOverScreen");
+            TransitionManager.Instance.TransitionToNextLevel("GameOverScreen");
+        }
+
+        public void NextLevel()
+        {
+            LevelCount++;
+            HazardManager.Instance.SetCurrentLevelValues();
+            TransitionManager.Instance.TransitionToNextLevel("Intermission");
         }
     }
 }

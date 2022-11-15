@@ -11,6 +11,12 @@ namespace QuestUp
         [SerializeField] private float _areaBorderX;
         [SerializeField] private float _areaBorderY;
 
+        protected override void InitializeValues()
+        {
+            _nukeCount = (int)(_nukeCount * HazardManager.Instance.CountMultiplier);
+            _nukeInterval /= HazardManager.Instance.RateMultiplier;
+        }
+
         protected override IEnumerator Sequence()
         {
             while(true)

@@ -14,6 +14,11 @@ namespace QuestUp
 
         private float _laserRotation = default;
 
+        protected override void InitializeValues()
+        {
+            _laserSpawnRate /= HazardManager.Instance.RateMultiplier;
+        }
+
         protected override IEnumerator Sequence()
         {
             while (true)

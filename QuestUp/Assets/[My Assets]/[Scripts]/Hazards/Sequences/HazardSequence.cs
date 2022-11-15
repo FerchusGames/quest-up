@@ -9,8 +9,11 @@ namespace QuestUp
 
         protected virtual void Start()
         {
+            InitializeValues();
             StartCoroutine(Sequence());
         }
+
+        protected abstract void InitializeValues();
 
         protected abstract GameObject Spawn();
 

@@ -22,7 +22,7 @@ namespace QuestUp
             }
         }
 
-        public void NextLevel(string nextLevel)
+        public void TransitionToNextLevel(string nextLevel)
         {
             _transitionAnimations.TriggerTransition(() =>
             {
