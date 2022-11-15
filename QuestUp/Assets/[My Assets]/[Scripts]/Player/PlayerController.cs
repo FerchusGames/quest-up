@@ -46,7 +46,6 @@ namespace QuestUp
             _animator.SetFloat(_ahAxisY, _moveDirection.y);
 
             CheckDirectionToFace(_moveDirection.x > 0);
-            //Debug.Log(context.ReadValue<Vector2>());
         }
 
         private void CheckDirectionToFace(bool isMovingRight)
