@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem.iOS;
@@ -15,9 +16,10 @@ namespace QuestUp
 
         private int _currentLevel = default;
         private int _hazardAmount = default;
-        private float _speedMultiplier = default;
-        private float _countMultiplier = default;
-        private float _rateMultiplier = default;
+
+        public float SpeedMultiplier { get; private set; }
+        public float CountMultiplier { get; private set; }
+        public float RateMultiplier { get; private set; }
 
         public LevelSO CurrentLevelSO { get; private set; }
 
@@ -34,14 +36,14 @@ namespace QuestUp
             }
         }
 
-        private void SetCurrentLevelValues()
+        public void SetCurrentLevelValues()
         {
             CurrentLevelSO = GetCurrentLevelSO();
 
             _hazardAmount = CurrentLevelSO.HazardAmount;
-            _speedMultiplier = GetCurrentLevelValue(CurrentLevelSO.SpeedMinMultiplier, CurrentLevelSO.SpeedMaxMultiplier);
-            _countMultiplier = GetCurrentLevelValue(CurrentLevelSO.CountMinMultiplier, CurrentLevelSO.CountMaxMultiplier);
-            _rateMultiplier = GetCurrentLevelValue(CurrentLevelSO.RateMinMultiplier, CurrentLevelSO.RateMaxMultiplier);
+            SpeedMultiplier = GetCurrentLevelValue(CurrentLevelSO.SpeedMinMultiplier, CurrentLevelSO.SpeedMaxMultiplier);
+            CountMultiplier = GetCurrentLevelValue(CurrentLevelSO.CountMinMultiplier, CurrentLevelSO.CountMaxMultiplier);
+            RateMultiplier = GetCurrentLevelValue(CurrentLevelSO.RateMinMultiplier, CurrentLevelSO.RateMaxMultiplier);
         }
 
         private float GetCurrentLevelValue(float minFloat,  float maxFloat)
@@ -64,9 +66,21 @@ namespace QuestUp
             return null;
         }
 
-        private void SpawnSequences()
+        public void SpawnSequences()
         {
+            SetCurrentLevelValues();
 
+            var hazards = ChooseSequences();
+            
+            foreach (var hazard in hazards)
+            {
+                Instantiate(hazard);
+            }
+        }
+
+        private IReadOnlyList<HazardSequence> ChooseSequences()
+        {
+            return new List<HazardSequence>(_hazardSequencerPrefabs).Shuffle().Take(CurrentLevelSO.HazardAmount).ToList();
         }
     }
 }

@@ -6,7 +6,7 @@ namespace QuestUp
     {
         public void GoToMainMenu()
         {
-            TransitionManager.Instance.NextLevel("MainMenu");
+            TransitionManager.Instance.TransitionToNextLevel("MainMenu");
         }
     }
 }

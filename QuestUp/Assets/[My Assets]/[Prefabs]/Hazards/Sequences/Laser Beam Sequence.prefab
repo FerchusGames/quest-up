@@ -30,7 +30,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 20
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6633394512023407593
 MonoBehaviour:
@@ -41,11 +41,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 6633394512023407599}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 27f784419263e16459937def296f89ad, type: 3}
+  m_Script: {fileID: 11500000, guid: 6476c44bec5987745b3b7f651d4e7cba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _hazard: {fileID: 3108842715334783193, guid: 5bd8664912c458341862041688dee8fa, type: 3}
   _laserLifespan: 2
   _laserSpawnRate: 0.2
-  _maxVerticalOffset: 15
-  _maxHorizontalOffset: 20
+  _maxVerticalOffset: 20
+  _maxHorizontalOffset: 15

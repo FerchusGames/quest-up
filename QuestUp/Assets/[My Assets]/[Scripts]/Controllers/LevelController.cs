@@ -17,6 +17,8 @@ namespace QuestUp
         private void Start()
         {
             StartLevelTimer();
+            HazardManager.Instance.SpawnSequences();
+            Debug.Log(GameManager.Instance.LevelCount);
         }
 
         private void StartLevelTimer()
@@ -34,7 +36,6 @@ namespace QuestUp
                 TimeLeft--;
             }
             GameManager.Instance.NextLevel();
-            TransitionManager.Instance.NextLevel("Intermission");
         }
     }
 }
