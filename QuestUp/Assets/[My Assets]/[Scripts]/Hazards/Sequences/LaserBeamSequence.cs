@@ -1,10 +1,15 @@
+using System;
 using System.Collections;
+using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 namespace QuestUp
 {
     public class LaserBeamSequence : HazardSequence
     {
+        private IList<GameObject> _lasers = null;
+
         [SerializeField] private float _laserLifespan = default;
         [SerializeField] private float _laserSpawnRate = default;
         [SerializeField] private float _maxVerticalOffset = default;
@@ -21,10 +26,11 @@ namespace QuestUp
 
         protected override IEnumerator Sequence()
         {
+            _lasers = new List<GameObject>();
+
             while (true)
             {
-                Spawn();
-
+                _lasers.Add(Spawn());
                 yield return new WaitForSeconds(_laserSpawnRate);
             }
         }
@@ -36,8 +42,8 @@ namespace QuestUp
 
         private void SetPosition()
         {
-            float xPos = Random.Range(-_maxHorizontalOffset, _maxHorizontalOffset);
-            float yPos = Random.Range(-_maxVerticalOffset, _maxVerticalOffset);
+            float xPos = UnityEngine.Random.Range(-_maxHorizontalOffset, _maxHorizontalOffset);
+            float yPos = UnityEngine.Random.Range(-_maxVerticalOffset, _maxVerticalOffset);
             _laserPosition = new Vector2(xPos, yPos);
         }
 
@@ -49,17 +55,25 @@ namespace QuestUp
             GameObject laser = Instantiate(_hazard, _laserPosition, Quaternion.Euler(0, 0, _laserRotation));
             Destroy(laser, _laserLifespan);
 
-            return null;
+            return laser;
+        }
+
+        public override void Despawn()
+        {
+            foreach (GameObject laser in _lasers)
+            {
+                Destroy(laser);
+            }
         }
 
         private float Rotation360()
         {
-            return Random.Range(0, 360);
+            return UnityEngine.Random.Range(0, 360);
         }
 
         private float HorizontalVerticalRotation()
         {
-            if (Random.value < 0.5f)
+            if (UnityEngine.Random.value < 0.5f)
             {
                 return 0;
             }

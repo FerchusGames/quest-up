@@ -43,6 +43,7 @@ namespace QuestUp
         public void NextLevel()
         {
             LevelCount++;
+            HazardManager.Instance.DespawnSequences();
             HazardManager.Instance.SetCurrentLevelValues();
             TransitionManager.Instance.TransitionToNextLevel("Intermission");
         }

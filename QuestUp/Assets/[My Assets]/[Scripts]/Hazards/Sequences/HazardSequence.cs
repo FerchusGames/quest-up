@@ -17,6 +17,8 @@ namespace QuestUp
 
         protected abstract GameObject Spawn();
 
+        public abstract void Despawn();
+
         protected abstract IEnumerator Sequence();
     }
 }

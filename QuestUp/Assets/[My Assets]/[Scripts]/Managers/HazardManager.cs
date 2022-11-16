@@ -11,8 +11,8 @@ namespace QuestUp
     {
         public static HazardManager Instance { get; private set; }
 
-        [SerializeField] private HazardSequence[] _hazardSequencerPrefabs;
-        [SerializeField] private LevelSO[] _levelScriptableObjects;
+        [SerializeField] private HazardSequence[] _hazardSequencerPrefabs = null;
+        [SerializeField] private LevelSO[] _levelScriptableObjects = null;
 
         private int _currentLevel = default;
         private int _hazardAmount = default;
@@ -22,6 +22,8 @@ namespace QuestUp
         public float RateMultiplier { get; private set; }
 
         public LevelSO CurrentLevelSO { get; private set; }
+
+        private IList<HazardSequence> _hazardSequences = null;
 
         private void Awake()
         {
@@ -66,19 +68,32 @@ namespace QuestUp
             return null;
         }
 
+        public void DespawnSequences()
+        {
+            foreach (HazardSequence hazardSequence in _hazardSequences)
+            {
+                hazardSequence.Despawn();
+            }
+        }
+
         public void SpawnSequences()
         {
             SetCurrentLevelValues();
 
-            var hazards = ChooseSequences();
-            
-            foreach (var hazard in hazards)
+            var hazardsToSpawn = ChooseSequences();
+
+            _hazardSequences = new HazardSequence[CurrentLevelSO.HazardAmount];
+
+            int i = 0;
+
+            foreach (HazardSequence hazardSequence in hazardsToSpawn)
             {
-                Instantiate(hazard);
+                _hazardSequences[i] = Instantiate(hazardSequence).GetComponent<HazardSequence>();
+                i++;
             }
         }
 
-        private IReadOnlyList<HazardSequence> ChooseSequences()
+        private IList<HazardSequence> ChooseSequences()
         {
             return new List<HazardSequence>(_hazardSequencerPrefabs).Shuffle().Take(CurrentLevelSO.HazardAmount).ToList();
         }

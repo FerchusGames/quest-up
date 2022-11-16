@@ -38,7 +38,15 @@ namespace QuestUp
             }
             return null;
         }
-        
+
+        public override void Despawn()
+        {
+            foreach (GameObject laser in _lasers)
+            {
+                Destroy(laser);
+            }
+        }
+
         private IEnumerator ChangeDirection()
         {
             while (true)
