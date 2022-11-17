@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.InputSystem.iOS;
-
+    
 namespace QuestUp
 {
     public class HazardManager : MonoBehaviour
