@@ -49,6 +49,7 @@ namespace QuestUp
             {
                 Destroy(nuke);
             }
+            Destroy(gameObject);
         }
 
         protected Vector2 GetSpawnPosition()

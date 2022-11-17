@@ -8,7 +8,7 @@ namespace QuestUp
 
         [field: SerializeField] public int LevelCount { get; private set; }
 
-        private bool _keepPlaying = true;
+        public bool KeepPlaying { get; private set; }
 
         private void Awake()
         {
@@ -22,16 +22,16 @@ namespace QuestUp
                 DontDestroyOnLoad(gameObject);
             }
 
-            _keepPlaying = true;
+            KeepPlaying = true;
             LevelCount = 1;
         }
 
         private void Update()
         {
-            if (HealthManager.Instance.CurrentHealth <= 0 && _keepPlaying)
+            if (HealthManager.Instance.CurrentHealth <= 0 && KeepPlaying)
             {
                 GameOverScreen();
-                _keepPlaying = false;
+                KeepPlaying = false;
             }
         }
 

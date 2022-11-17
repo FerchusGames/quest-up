@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _hazard: {fileID: 729339673734078835, guid: ca52b39d4cf38c0479ed713c250cf96a, type: 3}
-  _laserCount: 4
+  _laserCount: 2
   _rotationSpeed: 10
   _maxDirectionDuration: 10
 --- !u!1 &6261738713030083947

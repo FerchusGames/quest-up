@@ -413,7 +413,7 @@ GameObject:
   - component: {fileID: 1247606369}
   - component: {fileID: 1247606370}
   m_Layer: 0
-  m_Name: GameOverScreen Controller
+  m_Name: GameOverScreenController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -443,7 +443,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1247606368}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f44cf0afe774d554fbd914aafc16187c, type: 3}
+  m_Script: {fileID: 11500000, guid: 99d1968acd1d1674c95a17439ae03d5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1411279542
@@ -841,7 +841,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1247606370}
-        m_TargetAssemblyTypeName: GameOverScreenController, Assembly-CSharp
+        m_TargetAssemblyTypeName: QuestUp.GameOverScreenController, Assembly-CSharp
         m_MethodName: GoToMainMenu
         m_Mode: 1
         m_Arguments:

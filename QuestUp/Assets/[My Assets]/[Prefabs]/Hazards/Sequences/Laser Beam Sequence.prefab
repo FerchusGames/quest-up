@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _hazard: {fileID: 3108842715334783193, guid: 5bd8664912c458341862041688dee8fa, type: 3}
-  _laserLifespan: 2
+  _laserLifespan: 1
   _laserSpawnRate: 0.4
   _maxVerticalOffset: 20
   _maxHorizontalOffset: 15

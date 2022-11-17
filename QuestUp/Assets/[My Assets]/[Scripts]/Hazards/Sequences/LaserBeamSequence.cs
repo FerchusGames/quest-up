@@ -64,6 +64,7 @@ namespace QuestUp
             {
                 Destroy(laser);
             }
+            Destroy(gameObject);
         }
 
         private float Rotation360()

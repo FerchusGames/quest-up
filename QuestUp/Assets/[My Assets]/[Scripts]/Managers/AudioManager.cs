@@ -28,9 +28,9 @@ namespace QuestUp
             _audioSourceMusic.Play();
         }
 
-        public void PlaySoundEffect(AudioClip audioClip)
+        public void PlaySoundEffect(AudioClip audioClip, float volumeScale)
         {
-            _audioSourceSoundEffects.PlayOneShot(audioClip);
+            _audioSourceSoundEffects.PlayOneShot(audioClip, volumeScale);
         }
     }
 }

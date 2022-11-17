@@ -9,6 +9,7 @@ namespace QuestUp
 
         [SerializeField] private int _damageValue = default;
         [SerializeField] private float _damageRate = default;
+        [SerializeField] private float _volumeScale = 1f;
 
         private IEnumerator _coroutineDamageOverTime = null;
 
@@ -31,7 +32,7 @@ namespace QuestUp
         {
             while (true)
             {
-                if (_audioClip != null) AudioManager.Instance.PlaySoundEffect(_audioClip);
+                if (_audioClip != null) AudioManager.Instance.PlaySoundEffect(_audioClip, _volumeScale);
                 HealthManager.Instance.LoseHealth(_damageValue);
                 yield return new WaitForSeconds(_damageRate);
             }

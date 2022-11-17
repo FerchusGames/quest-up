@@ -45,6 +45,7 @@ namespace QuestUp
             {
                 Destroy(laser);
             }
+            Destroy(gameObject);
         }
 
         private IEnumerator ChangeDirection()
