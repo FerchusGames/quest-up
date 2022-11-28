@@ -35,8 +35,24 @@ namespace QuestUp
             }
         }
 
+        private void SaveHighScore()
+        {
+            if (CompareHighScore())
+            {
+                PlayerPrefs.SetInt("HighScore", LevelCount);
+            }
+        }
+
+        private bool CompareHighScore()
+        {
+            int highScore = PlayerPrefs.GetInt("HighScore", 1);
+            
+            return (LevelCount > highScore);
+        }
+
         private void GameOverScreen()
         {
+            SaveHighScore();
             TransitionManager.Instance.TransitionToNextLevel("GameOverScreen");
         }
 
