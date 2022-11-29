@@ -13552,7 +13552,7 @@ MonoBehaviour:
           m_DissipationMode: 2
           m_DissipationDistance: 100
           m_PropagationSpeed: 343
-        Velocity: {x: 1, y: 1, z: 1}
+        Velocity: {x: 3, y: 3, z: 3}
         ClearImpulseOnStop: 0
 --- !u!1 &520737213
 GameObject:
@@ -45036,8 +45036,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c3933b598c2efa4db15ac4f381e3f3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <_screenShake>k__BackingField: {fileID: 465852952}
-  <_particleEffects>k__BackingField: {fileID: 1651203404}
+  <ScreenShake>k__BackingField: {fileID: 465852952}
+  <ParticleEffects>k__BackingField: {fileID: 1651203404}
 --- !u!1 &1912741916
 GameObject:
   m_ObjectHideFlags: 0
