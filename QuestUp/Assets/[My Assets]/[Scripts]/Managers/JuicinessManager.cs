@@ -7,8 +7,8 @@ namespace QuestUp
     {
         public static JuicinessManager Instance { get; private set; }
 
-        [field:SerializeField] public MMF_Player _screenShake { get; private set; }
-        [field:SerializeField] public MMF_Player _particleEffects { get; private set; }
+        [field:SerializeField] public MMF_Player ScreenShake { get; private set; }
+        [field:SerializeField] public MMF_Player ParticleEffects { get; private set; }
 
         private void Awake()
         {
