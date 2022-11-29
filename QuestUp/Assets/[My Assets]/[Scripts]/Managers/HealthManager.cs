@@ -30,6 +30,8 @@ namespace QuestUp
         public void LoseHealth(int damage)
         {
             CurrentHealth = Mathf.Clamp(CurrentHealth - damage, 0, MaxHealth);
+            JuicinessManager.Instance.ScreenShake.PlayFeedbacks();
+            JuicinessManager.Instance.ParticleEffects.PlayFeedbacks();
         }
     }
 }
