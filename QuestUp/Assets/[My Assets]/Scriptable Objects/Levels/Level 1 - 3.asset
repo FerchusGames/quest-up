@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <InitialLevel>k__BackingField: 1
   <LastLevel>k__BackingField: 3
-  <HazardAmount>k__BackingField: 1
+  <HazardAmount>k__BackingField: 2
   <SpeedMinMultiplier>k__BackingField: 1
   <SpeedMaxMultiplier>k__BackingField: 1.3
   <CountMinMultiplier>k__BackingField: 1

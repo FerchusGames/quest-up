@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7318849281104699791}
   - component: {fileID: 5095982029711581263}
   - component: {fileID: 2870780775654105181}
-  - component: {fileID: 183075099}
+  - component: {fileID: 137082945538444440}
   m_Layer: 0
   m_Name: Nuke
   m_TagString: Untagged
@@ -34,7 +34,7 @@ Transform:
   - {fileID: 6940854843063479983}
   - {fileID: 9122109416738707745}
   m_Father: {fileID: 0}
-  m_RootOrder: 23
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &5095982029711581263
 Animator:
@@ -68,7 +68,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57ada73423765a6438e483673bb4f6ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &183075099
+--- !u!114 &137082945538444440
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -81,6 +81,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _audioClip: {fileID: 8300000, guid: ff0ac53810759624b9094eeec2162787, type: 3}
+  _volumeScale: 0.05
 --- !u!1 &6282607701263123657
 GameObject:
   m_ObjectHideFlags: 0
@@ -196,6 +197,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _audioClip: {fileID: 8300000, guid: 45218db85ea1c08409096f6b5b305732, type: 3}
+  _volumeScale: 1
   _damageValue: 10
 --- !u!1 &7486746203036552294
 GameObject:

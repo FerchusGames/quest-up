@@ -6,10 +6,12 @@ namespace QuestUp
 {
     public class NukeSequence : HazardSequence
     {
-        [SerializeField] private int _nukeCount;
-        [SerializeField] private float _nukeInterval;
-        [SerializeField] private float _areaBorderX;
-        [SerializeField] private float _areaBorderY;
+        private GameObject[] _nukes = null;
+
+        [SerializeField] private int _nukeCount = default;
+        [SerializeField] private float _nukeInterval = default;
+        [SerializeField] private float _areaBorderX = default;
+        [SerializeField] private float _areaBorderY = default;
 
         protected override void InitializeValues()
         {
@@ -21,13 +23,15 @@ namespace QuestUp
         {
             while(true)
             {
+                _nukes = new GameObject[_nukeCount];
+
                 for (int i = 0; i < _nukeCount; i++)
                 {
-                    var nuke = Spawn();
+                    _nukes[i] = Spawn();
 
                     if (i != 0)
                     {
-                        nuke.GetComponent<AudioEvent>()?.Disable();
+                        _nukes[i].GetComponent<AudioEvent>()?.Disable();
                     }
                 }
                 yield return new WaitForSeconds(_nukeInterval);
@@ -37,6 +41,15 @@ namespace QuestUp
         protected override GameObject Spawn()
         {
             return Instantiate(_hazard, GetSpawnPosition(), Quaternion.identity);
+        }
+
+        public override void Despawn()
+        {
+            foreach (GameObject nuke in _nukes)
+            {
+                Destroy(nuke);
+            }
+            Destroy(gameObject);
         }
 
         protected Vector2 GetSpawnPosition()

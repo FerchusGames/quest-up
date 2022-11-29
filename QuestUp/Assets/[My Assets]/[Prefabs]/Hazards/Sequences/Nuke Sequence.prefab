@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _hazard: {fileID: 717230827873020657, guid: 555080e4b9355ba40abd4b726641e5d6, type: 3}
-  _nukeCount: 5
-  _nukeInterval: 3
+  _nukeCount: 12
+  _nukeInterval: 5
   _areaBorderX: 20
   _areaBorderY: 15

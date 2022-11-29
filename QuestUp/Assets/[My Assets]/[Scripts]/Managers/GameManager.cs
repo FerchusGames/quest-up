@@ -8,7 +8,7 @@ namespace QuestUp
 
         [field: SerializeField] public int LevelCount { get; private set; }
 
-        private bool _keepPlaying = true;
+        public bool KeepPlaying { get; private set; }
 
         private void Awake()
         {
@@ -22,27 +22,44 @@ namespace QuestUp
                 DontDestroyOnLoad(gameObject);
             }
 
-            _keepPlaying = true;
+            KeepPlaying = true;
             LevelCount = 1;
         }
 
         private void Update()
         {
-            if (HealthManager.Instance.CurrentHealth <= 0 && _keepPlaying)
+            if (HealthManager.Instance.CurrentHealth <= 0 && KeepPlaying)
             {
                 GameOverScreen();
-                _keepPlaying = false;
+                KeepPlaying = false;
             }
+        }
+
+        private void SaveHighScore()
+        {
+            if (CompareHighScore())
+            {
+                PlayerPrefs.SetInt("HighScore", LevelCount);
+            }
+        }
+
+        private bool CompareHighScore()
+        {
+            int highScore = PlayerPrefs.GetInt("HighScore", 1);
+            
+            return (LevelCount > highScore);
         }
 
         private void GameOverScreen()
         {
+            SaveHighScore();
             TransitionManager.Instance.TransitionToNextLevel("GameOverScreen");
         }
 
         public void NextLevel()
         {
             LevelCount++;
+            HazardManager.Instance.DespawnSequences();
             HazardManager.Instance.SetCurrentLevelValues();
             TransitionManager.Instance.TransitionToNextLevel("Intermission");
         }
