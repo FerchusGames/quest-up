@@ -6,12 +6,12 @@ namespace QuestUp
 {
     public class NukeSequence : HazardSequence
     {
-        private GameObject[] _nukes;
+        private GameObject[] _nukes = null;
 
-        [SerializeField] private int _nukeCount;
-        [SerializeField] private float _nukeInterval;
-        [SerializeField] private float _areaBorderX;
-        [SerializeField] private float _areaBorderY;
+        [SerializeField] private int _nukeCount = default;
+        [SerializeField] private float _nukeInterval = default;
+        [SerializeField] private float _areaBorderX = default;
+        [SerializeField] private float _areaBorderY = default;
 
         protected override void InitializeValues()
         {

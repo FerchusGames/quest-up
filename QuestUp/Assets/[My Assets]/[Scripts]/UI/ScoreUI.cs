@@ -1,20 +1,20 @@
-using QuestUp;
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class ScoreUI : MonoBehaviour
+namespace QuestUp
 {
-    private TMP_Text _text = null;
-
-    private void Start()
+    public class ScoreUI : MonoBehaviour
     {
-        _text = GetComponent<TMP_Text>();
-    }
+        private TMP_Text _text = null;
 
-    void Update()
-    {
-        _text.text = "Score: " + GameManager.Instance.LevelCount    ;
+        private void Start()
+        {
+            _text = GetComponent<TMP_Text>();
+        }
+
+        void Update()
+        {
+            _text.text = "Score: " + GameManager.Instance.LevelCount;
+        }
     }
 }
