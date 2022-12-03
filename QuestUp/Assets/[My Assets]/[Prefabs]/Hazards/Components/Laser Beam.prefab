@@ -149,7 +149,7 @@ MonoBehaviour:
   _audioClip: {fileID: 8300000, guid: fd6f696ccbdce594794e89169dbad7fc, type: 3}
   _damageValue: 1
   _damageRate: 0.5
-  _volumeScale: 0.2
+  _volumeScale: 0.5
 --- !u!114 &5603145088597316855
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -163,5 +163,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _audioClip: {fileID: 8300000, guid: 45218db85ea1c08409096f6b5b305732, type: 3}
-  _volumeScale: 0.2
+  _volumeScale: 0.5
   _damageValue: 2

@@ -81,7 +81,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _audioClip: {fileID: 8300000, guid: ff0ac53810759624b9094eeec2162787, type: 3}
-  _volumeScale: 0.05
+  _volumeScale: 0.2
 --- !u!1 &6282607701263123657
 GameObject:
   m_ObjectHideFlags: 0
