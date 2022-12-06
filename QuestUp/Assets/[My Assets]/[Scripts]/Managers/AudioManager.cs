@@ -22,6 +22,11 @@ namespace QuestUp
             }
         }
 
+        public void RestartMusic()
+        {
+            _audioSourceMusic.Play();
+        }
+
         public void PlayMusic(AudioClip audioClip)
         {
             _audioSourceMusic.clip = audioClip;
